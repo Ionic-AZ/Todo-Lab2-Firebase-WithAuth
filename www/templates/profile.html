@@ -1,0 +1,53 @@
+<ion-view view-title="Profile">
+ <ion-content class="padding login-container">
+      <div ng-if="authData.github" class="list card">
+        <div class="item item-avatar">
+          <img ng-src="{{authData.github.profileImageURL}}" alt="">
+          <h2>{{authData.github.displayName}}</h2>
+          <p>{{authData.github.username}}</p>
+          <p>{{authData.github.uid}}
+          <p><i class="icon ion-social-github"></i> Github</p>
+        </div>
+        
+        <!--<pre>{{ authData.github | json }}</pre>-->
+      </div>
+      <div ng-if="authData.facebook" class="list card">
+        <div class="item item-avatar">
+          <img ng-src="{{authData.facebook.profileImageURL}}" alt="">
+          <h2>{{authData.facebook.displayName}}</h2>
+          <p>{{authData.facebook.email}}</p>
+          <p>{{authData.facebook.uid}}</p>
+          <p><i class="icon ion-social-facebook"></i> Facebook</p>
+        </div>
+        <!--<pre>{{ authData.facebook | json }}</pre>-->
+      </div>
+      <div ng-if="authData.google" class="list card">
+        <div class="item item-avatar">
+          <img ng-src="{{authData.google.profileImageURL}}" alt="">
+          <h2>{{authData.google.displayName}}</h2>
+          <p>{{authData.google.id}}</p>
+          <p>{{authData.google.uid}}</p>
+          <p><i class="icon ion-social-googleplus"></i> Google</p>
+        </div>
+        <!--<pre>{{ authData.google | json }}</pre>-->
+      </div>
+      <div ng-if="authData.twitter" class="list card">
+        <div class="item item-avatar">
+          <img ng-src="{{authData.twitter.profileImageURL}}" alt="">
+          <h2>{{authData.twitter.displayName}}</h2>
+          <p>{{authData.twitter.username}}</p>
+          <p>{{authData.twitter.uid}}</p>
+          <p><i class="icon ion-social-twitter"></i> Twitter</p>
+        </div>
+        <!--<pre>{{ authData.twitter | json }}</pre>-->
+      </div>
+      
+      <button class="button button-full" ng-click="logout()">
+        Logout
+      </button>
+      
+       <div ng-ig="authData">
+        <pre>{{ authData | json }}</pre>
+      </div>
+    </ion-content>
+</ion-view>

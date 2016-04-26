@@ -1,0 +1,61 @@
+<ion-view view-title="Login">
+ <ion-content class="padding login-container">
+      <div class="col button-row text-center">
+        <button type="button" class="button button-block button-dark icon-left ion-social-github" ng-click="login('github')">Github</button>
+      </div>
+      <div class="col button-row text-center">
+        <button type="button" class="button button-block button-positive icon-left ion-social-facebook" ng-click="login('facebook')">Facebook</button>
+      </div>
+      <div class="col button-row text-center">
+        <button type="button" class="button button-block button-assertive icon-left ion-social-googleplus" ng-click="login('google')">Google+</button>
+      </div>
+
+      <div class="col button-row text-center">
+        <button type="button" class="button button-block button-calm icon-left ion-social-twitter" ng-click="login('twitter')">Twitter</button>
+      </div>
+      <div ng-if="authData.github" class="list card">
+        <div class="item item-avatar">
+          <img ng-src="{{authData.github.profileImageURL}}" alt="">
+          <h2>{{authData.github.displayName}}</h2>
+          <p>{{authData.github.username}}</p>
+          <p>{{authData.github.uid}}
+          <p><i class="icon ion-social-github"></i> Github</p>
+        </div>
+        <!--<pre>{{ authData.github | json }}</pre>-->
+      </div>
+      <div ng-if="authData.facebook" class="list card">
+        <div class="item item-avatar">
+          <img ng-src="{{authData.facebook.profileImageURL}}" alt="">
+          <h2>{{authData.facebook.displayName}}</h2>
+          <p>{{authData.facebook.email}}</p>
+          <p>{{authData.facebook.uid}}</p>
+          <p><i class="icon ion-social-facebook"></i> Facebook</p>
+        </div>
+        <!--<pre>{{ authData.facebook | json }}</pre>-->
+      </div>
+      <div ng-if="authData.google" class="list card">
+        <div class="item item-avatar">
+          <img ng-src="{{authData.google.profileImageURL}}" alt="">
+          <h2>{{authData.google.displayName}}</h2>
+          <p>{{authData.google.id}}</p>
+          <p>{{authData.google.uid}}</p>
+          <p><i class="icon ion-social-googleplus"></i> Google</p>
+        </div>
+        <!--<pre>{{ authData.google | json }}</pre>-->
+      </div>
+      <div ng-if="authData.twitter" class="list card">
+        <div class="item item-avatar">
+          <img ng-src="{{authData.twitter.profileImageURL}}" alt="">
+          <h2>{{authData.twitter.displayName}}</h2>
+          <p>{{authData.twitter.username}}</p>
+          <p>{{authData.twitter.uid}}</p>
+          <p><i class="icon ion-social-twitter"></i> Twitter</p>
+        </div>
+        <!--<pre>{{ authData.twitter | json }}</pre>-->
+      </div>
+       
+       <div ng-ig="authData">
+        <pre>{{ authData | json }}</pre>
+      </div>
+    </ion-content>
+</ion-view>

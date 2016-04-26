@@ -1,0 +1,19 @@
+<ion-view view-title="{{activeProject.title}}">
+	<ion-nav-buttons side="right">
+		<button class="button button-icon" ng-click="newTask()">
+			<i class="icon ion-compose"></i>
+		</button>
+	</ion-nav-buttons>
+	<ion-content class="padding">
+		<ion-list>
+			<ion-item class="item item-icon-left item-icon-right"
+					ng-repeat="(key, task) in activeProject.tasks track by $index">
+				<i class="icon"
+				   ng-class="task.completed ? 'ion-checkmark-circled' : 'ion-ios-circle-outline'"
+				   ng-click="completeTask(task, key)"></i>
+				<i ng-class="{completedTask: task.completed}">{{task.title}}</i>
+				<i class="icon ion-close icon-accessory" ng-click="deleteTask(task, key)"></i>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
